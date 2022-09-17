@@ -10,10 +10,6 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject PauseScreen;
     [SerializeField] Button PauseButton;
-    void Update()
-    {
-        
-    }
     public void OpenPauseMenu()
     {
         PauseScreen.SetActive(true);
