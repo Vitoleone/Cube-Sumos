@@ -7,7 +7,7 @@ public class PlayerRotation : MonoBehaviour
     // Start is called before the first frame update
     private Transform player;
     public float playerAngle;
-    private float playerRotateSpeed = 300;
+    private float playerRotateSpeed = 1;
     public Vector3 mousepos;
     public Vector3 direction;
     public Quaternion lookRotation;
@@ -33,7 +33,7 @@ public class PlayerRotation : MonoBehaviour
         mousepos = Camera.main.ScreenToWorldPoint(mousepos);
         
 
-        playerAngle += Input.GetAxis("Mouse X") * playerRotateSpeed * Time.deltaTime;
+        playerAngle += Vector2.Angle(-transform.position,mousepos) *Input.GetAxis("Mouse X") * playerRotateSpeed * Time.deltaTime;
         playerAngle = Mathf.Clamp(playerAngle,-2000,2000);
         player.localRotation = Quaternion.AngleAxis(playerAngle, Vector3.up);
     }

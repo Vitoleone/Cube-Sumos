@@ -8,15 +8,16 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed = 10f;
     [SerializeField] PlayerRotation playerRotation;
-    
-    void Start()
+    Rigidbody myRb;
+
+    private void Awake()
     {
-       
+        myRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.position += transform.forward * speed * Time.deltaTime;
+        myRb.velocity = transform.forward * speed;
     }
 }
