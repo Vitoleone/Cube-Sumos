@@ -39,8 +39,8 @@ public class EnemyMovement : MonoBehaviour
         {
             if (isPushed == false)
             {
-               
-                
+
+                CheckDestroyedGameObjects(allObjects);
                 moveDirection = GetDirectionToNearestEnemy(GetNearestEnemy(allObjects));
                 myRb.velocity = moveDirection * moveSpeed;
                 myTweener = myRb.DOLookAt(moveDirection, 0, AxisConstraint.Y).OnComplete(delegate

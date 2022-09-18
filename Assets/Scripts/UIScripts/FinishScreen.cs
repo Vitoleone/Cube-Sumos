@@ -10,17 +10,22 @@ public class FinishScreen : MonoBehaviour
     [SerializeField] GameObject scoreText;
     [SerializeField] GameObject sumosDefeatedText;
     [SerializeField] GameObject positionText;
-    [SerializeField] GameObject gameManager;
+    GameManager gameManager;
 
+    private void Awake()
+    {
+        gameManager = GameObject.Find("GameManager").gameObject.GetComponent<GameManager>();
+    }
 
     private void Update()
     {
-        if(gameManager.GetComponent<GameManager>().instance.isGameOver == true)
+        if(gameManager.instance.isGameOver == true)
         {
             
             finishScreen.SetActive(true);
-            scoreText.GetComponent<TextMeshProUGUI>().text = gameManager.GetComponent<GameManager>().instance.score.ToString();
-            positionText.GetComponent<TextMeshProUGUI>().text = "#" + (gameManager.GetComponent<PositionScript>().instance.position+1).ToString();
+            scoreText.GetComponent<TextMeshProUGUI>().text = gameManager.instance.score.ToString();
+            positionText.GetComponent<TextMeshProUGUI>().text = "#" + (gameManager.GetComponent<PositionScript>().instance.position).ToString();
+            sumosDefeatedText.GetComponent<TextMeshProUGUI>().text = gameManager.instance.defeatedSumos.ToString();
         }
         
     }

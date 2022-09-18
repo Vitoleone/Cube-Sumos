@@ -38,7 +38,7 @@ public class PushScript : MonoBehaviour
     IEnumerator WaitForSeconds(GameObject collision)
     {
         
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.65f);
         
         if(collision != null)
         {

@@ -32,10 +32,7 @@ public class PositionScript : MonoBehaviour
             players = new List<string>();
             scores = GetScores(allEnemies);
             List<KeyValuePair<string, int>> list = scores.ToList();
-            if(player != null)
-            {
-                position = list.FindIndex(key => key.Key == player.gameObject.name);//Getting player's rank
-            }
+           
             foreach (var item in list.OrderByDescending(key => key.Value))
             {
                 if (item.Key != null)
@@ -44,6 +41,17 @@ public class PositionScript : MonoBehaviour
                 }
 
 
+            }
+            if (player != null)
+            {
+                for (int i = 0; i < players.Count; i++)
+                {
+                    if (players[i] == player.gameObject.name)
+                    {
+                        position = i+1;
+                        
+                    }
+                }//Getting player's rank
             }
         }
     }

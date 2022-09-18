@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool isGamePaused = false;
     public bool isGameOver = false;
     public int score;
+    public int defeatedSumos;
     
     private void Awake()
     {
@@ -17,6 +18,11 @@ public class GameManager : MonoBehaviour
     public void AddScore()
     {
         score += 100;
+    }
+    public void AddDefeatedSumo()
+    {
+        defeatedSumos++;
+        score += 1000;
     }
 
 

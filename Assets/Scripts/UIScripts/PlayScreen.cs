@@ -14,10 +14,14 @@ public class PlayScreen : MonoBehaviour
     [SerializeField] GameObject ScoreText;
     [SerializeField] GameObject SumosLeftText;
     [SerializeField] GameObject GameManager;
+    
 
-    int sumos;
+
+    public int sumos;
     int score;
     float countdownTimer = 126;
+
+   
 
     // Update is called once per frame
     void Update()

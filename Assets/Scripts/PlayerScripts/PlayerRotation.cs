@@ -34,7 +34,7 @@ public class PlayerRotation : MonoBehaviour
         
 
         playerAngle += Vector2.Angle(-transform.position,mousepos) *Input.GetAxis("Mouse X") * playerRotateSpeed * Time.deltaTime;
-        playerAngle = Mathf.Clamp(playerAngle,-2000,2000);
+        //playerAngle = Mathf.Clamp(playerAngle,-720,360);
         player.localRotation = Quaternion.AngleAxis(playerAngle, Vector3.up);
     }
 }
