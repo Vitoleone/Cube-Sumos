@@ -7,7 +7,6 @@ public class GetPlayerScore : MonoBehaviour
 {
     Rigidbody myRb;
     public GetPlayerScore instance;
-    public int score;
     public float scale = 1;
     private void Awake()
     {
@@ -15,10 +14,7 @@ public class GetPlayerScore : MonoBehaviour
         instance = this;
         
     }
-    public void AddScore()
-    {
-        score += 100;
-    }
+   
     public void EatFood()
     {
         scale += 0.15f;
