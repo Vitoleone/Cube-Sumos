@@ -18,7 +18,7 @@ public class GetPlayerScore : MonoBehaviour
     public void EatFood()
     {
         scale += 0.15f;
-        myRb.mass += 10;
+        gameObject.GetComponent<PushScript>().pushPower += 15;
         transform.DOScaleX(scale, 0);
         transform.DOScaleZ(scale, 0);
     }

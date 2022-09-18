@@ -20,7 +20,7 @@ public class FinishScreen : MonoBehaviour
             
             finishScreen.SetActive(true);
             scoreText.GetComponent<TextMeshProUGUI>().text = gameManager.GetComponent<GameManager>().instance.score.ToString();
-            positionText.GetComponent<TextMeshProUGUI>().text = "#" + gameManager.GetComponent<PositionScript>().instance.position.ToString();
+            positionText.GetComponent<TextMeshProUGUI>().text = "#" + (gameManager.GetComponent<PositionScript>().instance.position+1).ToString();
         }
         
     }

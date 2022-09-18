@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DestroyPlayer : MonoBehaviour
 {
+
     private void OnTriggerExit(Collider other)
     {
         if(other.CompareTag("Player"))

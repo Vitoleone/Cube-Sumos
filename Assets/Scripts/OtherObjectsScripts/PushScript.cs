@@ -8,6 +8,7 @@ public class PushScript : MonoBehaviour
 {
     Rigidbody myRb;
     public float pushPower;
+    public GameObject lastHitted;
     private void Awake()
     {
         myRb = gameObject.GetComponent<Rigidbody>();
@@ -44,11 +45,13 @@ public class PushScript : MonoBehaviour
             if (collision.CompareTag("Player"))
             {
                 collision.GetComponent<PlayerMovement>().instance.isPushed = false;
+                lastHitted = collision.gameObject;
 
             }
             else if (collision.CompareTag("Enemy"))
             {
                 collision.GetComponent<EnemyMovement>().instance.isPushed = false;
+                lastHitted = collision.gameObject;
             }
         }
        

@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using static UnityEditor.Progress;
 
 public class PositionScript : MonoBehaviour
 {
 
-    [SerializeField] List<GameObject> ?allEnemies;
+    [SerializeField] List<GameObject> allEnemies;
     [SerializeField] GameObject player;
     [SerializeField] GameObject gameManager;
     [SerializeField] Dictionary<string,int> scores;
