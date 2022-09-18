@@ -17,8 +17,9 @@ public class PushScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Vector3 awayFromPlayer = collision.gameObject.transform.position - transform.position;
+        Vector3 awayFromPlayer = collision.gameObject.transform.position - transform.position;//Direction of push
         Rigidbody enemyRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+
         if (collision.gameObject.CompareTag("Enemy"))
         {
 
@@ -38,7 +39,7 @@ public class PushScript : MonoBehaviour
     IEnumerator WaitForSeconds(GameObject collision)
     {
         
-        yield return new WaitForSeconds(0.65f);
+        yield return new WaitForSeconds(0.65f);//delay for moving after pushed
         
         if(collision != null)
         {

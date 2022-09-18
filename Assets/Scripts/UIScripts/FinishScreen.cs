@@ -23,7 +23,7 @@ public class FinishScreen : MonoBehaviour
         {
             
             finishScreen.SetActive(true);
-            scoreText.GetComponent<TextMeshProUGUI>().text = gameManager.instance.score.ToString();
+            scoreText.GetComponent<TextMeshProUGUI>().text = gameManager.instance.score.ToString();//ScoreText's text get value of gameManager's score
             positionText.GetComponent<TextMeshProUGUI>().text = "#" + (gameManager.GetComponent<PositionScript>().instance.position).ToString();
             sumosDefeatedText.GetComponent<TextMeshProUGUI>().text = gameManager.instance.defeatedSumos.ToString();
         }

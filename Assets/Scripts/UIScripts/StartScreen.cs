@@ -17,7 +17,7 @@ public class StartScreen : MonoBehaviour
 
     void Start()
     {
-        hand.transform.DOMoveX(276, 1f).SetLoops(10000, LoopType.Yoyo).SetEase(Ease.InOutFlash);
+        hand.transform.DOMoveX(276, 1f).SetLoops(10000, LoopType.Yoyo).SetEase(Ease.InOutFlash); //Tween UI animations for startScreen
         TouchAndPlayText.transform.DOScale(1.2f, 0.5f).SetLoops(10000, LoopType.Yoyo).SetEase(Ease.InOutFlash);
         CountDownText.transform.DOScale(1.2f, 0.5f).SetLoops(10000, LoopType.Yoyo).SetEase(Ease.InOutFlash);
     }

@@ -33,8 +33,7 @@ public class PlayerRotation : MonoBehaviour
         mousepos = Camera.main.ScreenToWorldPoint(mousepos);
         
 
-        playerAngle += Vector2.Angle(-transform.position,mousepos) *Input.GetAxis("Mouse X") * playerRotateSpeed * Time.deltaTime;
-        //playerAngle = Mathf.Clamp(playerAngle,-720,360);
+        playerAngle += Vector2.Angle(-transform.position,mousepos) *Input.GetAxis("Mouse X") * playerRotateSpeed * Time.deltaTime;//angle will be increased if player moves mouse on x axis.
         player.localRotation = Quaternion.AngleAxis(playerAngle, Vector3.up);
     }
 }

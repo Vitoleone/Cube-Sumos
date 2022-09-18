@@ -16,8 +16,7 @@ public class CameraFollowing : MonoBehaviour
         
         if(Player != null && gameManager.instance.isGameStarted)
         {
-            //moveTween = transform.DOMove(new Vector3(Player.transform.position.x,transform.position.y,Player.transform.position.z-5f), 0, false);//camera's position should be player's backside, for this we can do some adjustment on z axis.
-            transform.position = new Vector3(Player.transform.position.x+7, 12, Player.transform.position.z - 5f);
+            transform.position = new Vector3(Player.transform.position.x+7, 12, Player.transform.position.z - 5f);//camera's position should be player's backside, for this we can do some adjustment on z and x axis.
         }
         
     }

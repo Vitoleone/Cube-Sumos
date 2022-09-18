@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,7 +24,7 @@ public class FoodSpawner : MonoBehaviour
     {
         
         Vector3 foodSpawnPos = new Vector3(Random.insideUnitCircle.x * 20, 1f, Random.insideUnitCircle.y * 20);
-        GameObject newFood = Instantiate(Food, foodSpawnPos, Quaternion.identity);
+        GameObject newFood = Instantiate(Food, foodSpawnPos, Quaternion.Euler(90, 0, 0));
         AddFoodToObjectList(enemies, newFood);
     }
     void AddFoodToObjectList(GameObject[] enemies, GameObject newFood)

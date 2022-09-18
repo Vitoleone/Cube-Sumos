@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PlayScreen : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //This is for screen for in playtime.
+    
     [SerializeField] GameObject Player;
     [SerializeField] GameObject StartScreen;
     [SerializeField] GameObject playScreen;
@@ -23,14 +24,15 @@ public class PlayScreen : MonoBehaviour
 
    
 
-    // Update is called once per frame
+    
     void Update()
     {
-        countdownTimer -= Time.deltaTime;
+        countdownTimer -= Time.deltaTime;//Timers value decrease every second
+
         if(StartScreen.activeInHierarchy == false && Player.gameObject != null)
         {
             ScoreText.GetComponent<TextMeshProUGUI>().text =  GameManager.GetComponent<GameManager>().instance.score.ToString();
-            sumos = GameObject.FindGameObjectsWithTag("Enemy").Length+1;
+            sumos = GameObject.FindGameObjectsWithTag("Enemy").Length+1;//Enemies + 1(player)
             if(playScreen.activeInHierarchy == false)
             {
                 playScreen.SetActive(true);

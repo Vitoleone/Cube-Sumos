@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public void AddDefeatedSumo()
     {
         defeatedSumos++;
-        score += 1000;
+        score += 100;
     }
 
 

@@ -14,7 +14,7 @@ public class DestroyPlayer : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            gameManager.GetComponent<PositionScript>().instance.position = GameObject.Find("UIController").GetComponent<PlayScreen>().sumos;
+            gameManager.GetComponent<PositionScript>().instance.position = GameObject.Find("UIController").GetComponent<PlayScreen>().sumos; //if player dies before other sumos his position equals to left sumos
             Destroy(other.gameObject);
 
         }

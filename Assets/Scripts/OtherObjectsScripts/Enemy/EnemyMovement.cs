@@ -7,11 +7,13 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public List<GameObject> allObjects;
-    [SerializeField] float moveSpeed = 6.5f;
     GameObject[] allplayersArray;
     GameObject[] allFoodsArray;
+
+    [SerializeField] float moveSpeed = 6.5f;
     Rigidbody myRb;
     Vector3 moveDirection;
+
     Tweener myTweener;
     [SerializeField] GameManager gameManager;
 
@@ -22,9 +24,9 @@ public class EnemyMovement : MonoBehaviour
     {
         instance = this;
         allObjects = new List<GameObject>();
-        allplayersArray = GameObject.FindGameObjectsWithTag("Enemy");
+        allplayersArray = GameObject.FindGameObjectsWithTag("Enemy");//getting all gameobjects which has "Enemy" tag.
         allFoodsArray = GameObject.FindGameObjectsWithTag("Food");
-        allplayersArray[allplayersArray.Length-1] = GameObject.FindGameObjectWithTag("Player"); 
+        allplayersArray[allplayersArray.Length-1] = GameObject.FindGameObjectWithTag("Player");//adding player to the list. 
         myRb = gameObject.GetComponent<Rigidbody>();
         
     }
@@ -34,10 +36,10 @@ public class EnemyMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        CheckDestroyedGameObjects(allObjects);
+        CheckDestroyedGameObjects(allObjects);//If one of the objects is destroyed we can check it with that method.
         if (gameManager.instance.isGameStarted && gameManager.instance.isGamePaused == false && gameManager.instance.isGameOver == false)
         {
-            if (isPushed == false)
+            if (isPushed == false)//If this enemy has not any force on it this if statement will work
             {
 
                 CheckDestroyedGameObjects(allObjects);
@@ -54,7 +56,7 @@ public class EnemyMovement : MonoBehaviour
 
 
     }
-    void ArrayToList(GameObject[] playersArray, GameObject[] foods)
+    void ArrayToList(GameObject[] playersArray, GameObject[] foods)//we can do the same thing with .ToList() but i wanted to do it with this way.
     {
         for (int i = 0; i < playersArray.Length; i++)
         {
@@ -84,7 +86,7 @@ public class EnemyMovement : MonoBehaviour
         {
             distances.Add(Vector3.Distance(gameObject.transform.position, players[i].transform.position));
         }
-         int index = distances.FindIndex(distance => distances.Min() == distance);
+         int index = distances.FindIndex(distance => distances.Min() == distance);// used Linq for getting the min distance value from distances list.
         nearestEnemy = players[index].transform;
         return nearestEnemy;
     }
