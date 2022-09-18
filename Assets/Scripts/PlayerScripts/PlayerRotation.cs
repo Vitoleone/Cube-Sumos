@@ -1,6 +1,9 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerRotation : MonoBehaviour
 {
@@ -24,16 +27,18 @@ public class PlayerRotation : MonoBehaviour
         {
 
             RotatePlayer();
+            
         }
 
     }
     void RotatePlayer()
     {
-        Vector3 mousepos = Input.mousePosition;
-        mousepos = Camera.main.ScreenToWorldPoint(mousepos);
-        
-
-        playerAngle += Vector2.Angle(-transform.position,mousepos) *Input.GetAxis("Mouse X") * playerRotateSpeed * Time.deltaTime;//angle will be increased if player moves mouse on x axis.
-        player.localRotation = Quaternion.AngleAxis(playerAngle, Vector3.up);
+        var lookAtPos = Input.mousePosition;
+        lookAtPos.z = Camera.main.transform.position.y - transform.position.y;
+        lookAtPos = Camera.main.ScreenToWorldPoint(lookAtPos);
+        var lookPos = lookAtPos - transform.position;
+        Quaternion lookRot = Quaternion.LookRotation(lookPos);
+        lookRot.eulerAngles = new Vector3(transform.rotation.eulerAngles.x, lookRot.eulerAngles.y, transform.rotation.eulerAngles.z);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, Time.deltaTime * 10f);
     }
 }

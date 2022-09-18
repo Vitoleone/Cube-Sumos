@@ -12,6 +12,7 @@ public class StartScreen : MonoBehaviour
     [SerializeField] GameObject CountDownText;
     float countDownNumber = 4;
     [SerializeField] GameObject startScreen;
+    [SerializeField] GameObject PauseButton;
     
     [SerializeField] GameManager gameManager;
 
@@ -44,6 +45,7 @@ public class StartScreen : MonoBehaviour
     {
 
         gameManager.instance.isGameStarted = true;
+        PauseButton.SetActive(true);
         startScreen.SetActive(false);
         
     }

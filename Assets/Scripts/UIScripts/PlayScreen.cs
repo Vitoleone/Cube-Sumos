@@ -15,6 +15,7 @@ public class PlayScreen : MonoBehaviour
     [SerializeField] GameObject ScoreText;
     [SerializeField] GameObject SumosLeftText;
     [SerializeField] GameObject GameManager;
+    [SerializeField] GameObject pauseMenu;
     
 
 
@@ -46,6 +47,7 @@ public class PlayScreen : MonoBehaviour
             GameManager.GetComponent<GameManager>().instance.isGameOver = true;
             playScreen.SetActive(false);
             finishScreen.SetActive(true);
+            pauseMenu.SetActive(false);
         }
         
     }

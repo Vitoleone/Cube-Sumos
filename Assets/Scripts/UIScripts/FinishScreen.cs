@@ -10,6 +10,8 @@ public class FinishScreen : MonoBehaviour
     [SerializeField] GameObject scoreText;
     [SerializeField] GameObject sumosDefeatedText;
     [SerializeField] GameObject positionText;
+    [SerializeField] GameObject pauseButton;
+
     GameManager gameManager;
 
     private void Awake()
@@ -23,6 +25,7 @@ public class FinishScreen : MonoBehaviour
         {
             
             finishScreen.SetActive(true);
+            pauseButton.SetActive(false);
             scoreText.GetComponent<TextMeshProUGUI>().text = gameManager.instance.score.ToString();//ScoreText's text get value of gameManager's score
             positionText.GetComponent<TextMeshProUGUI>().text = "#" + (gameManager.GetComponent<PositionScript>().instance.position).ToString();
             sumosDefeatedText.GetComponent<TextMeshProUGUI>().text = gameManager.instance.defeatedSumos.ToString();
