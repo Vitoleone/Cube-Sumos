@@ -5,18 +5,13 @@ using UnityEngine;
 
 public class FoodRotation : MonoBehaviour
 {
-    Tweener rotateTween;
-    void Start()
+    private float rotateTimer;
+    private float rotateSpeed = 100f;
+    private void Update()
     {
-        rotateTween = transform.DORotate(new Vector3(-transform.rotation.x,360), 1,RotateMode.FastBeyond360)
-            .SetLoops(10000, LoopType.Incremental).
-            SetEase(Ease.InCirc)
-            .OnComplete(delegate
-            {
-                rotateTween.Kill();
-            });
-        
+        rotateTimer += Time.deltaTime *rotateSpeed;
+        transform.rotation = Quaternion.Euler(Vector3.right * 90 + Vector3.up * rotateTimer);
     }
 
-  
+
 }
