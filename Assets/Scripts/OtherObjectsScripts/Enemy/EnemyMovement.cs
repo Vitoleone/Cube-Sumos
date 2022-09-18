@@ -35,7 +35,7 @@ public class EnemyMovement : MonoBehaviour
     private void FixedUpdate()
     {
         CheckDestroyedGameObjects(allObjects);
-        if (gameManager.instance.isGameStarted && gameManager.instance.isGamePaused == false)
+        if (gameManager.instance.isGameStarted && gameManager.instance.isGamePaused == false && gameManager.instance.isGameOver == false)
         {
             if (isPushed == false)
             {

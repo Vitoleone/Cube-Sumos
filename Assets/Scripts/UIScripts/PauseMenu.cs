@@ -30,6 +30,7 @@ public class PauseMenu : MonoBehaviour
     public void TryAgain()
     {
         Time.timeScale = 1;
+        
         DOTween.KillAll();
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         gameManager.instance.isGameStarted = false;

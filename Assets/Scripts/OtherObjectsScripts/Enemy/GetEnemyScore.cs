@@ -23,6 +23,7 @@ public class GetEnemyScore : MonoBehaviour
     {
         scale += 0.15f;
         myRb.mass += 10;
+        gameObject.GetComponent<PushScript>().pushPower += 10;
         transform.DOScaleX(scale, 0);
         transform.DOScaleZ(scale, 0);
     }

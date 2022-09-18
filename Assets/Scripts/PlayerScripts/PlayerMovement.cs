@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(isPushed == false && gameManager.instance.isGameStarted && gameManager.instance.isGamePaused == false)
+        if(isPushed == false && gameManager.instance.isGameStarted && gameManager.instance.isGamePaused == false && gameManager.instance.isGameOver == false)
         {
           
             myRb.velocity = transform.forward * speed;
