@@ -9,8 +9,8 @@ This is an internship demo for No Surrender Internship program.
 <img src = "https://user-images.githubusercontent.com/74705281/190926204-0221ab99-711a-43a5-930d-403aa3ca1fdb.jpg">
 
 <h1>GamePlay Gifs </h1>
-![GamePlay](https://user-images.githubusercontent.com/74705281/190926492-580c0d94-a6d6-4a3e-834e-c5697db34e46.gif)
-![pauseMenu](https://user-images.githubusercontent.com/74705281/190926502-88f99fd9-f08b-441a-a880-56f628a1365b.gif)
-![getFood](https://user-images.githubusercontent.com/74705281/190926495-b4397b72-acab-4910-9c04-3e2d2f91f1c2.gif)
-![startScreen](https://user-images.githubusercontent.com/74705281/190926497-2c2b9523-b142-4872-b751-4d043a573e91.gif)
-![bounce](https://user-images.githubusercontent.com/74705281/190926498-33dc5579-59a8-45f5-bf37-fb0f9359680c.gif)
+![GamePlay](https://user-images.githubusercontent.com/74705281/190926543-161b62e1-f375-408f-8d86-543d9268c187.gif)
+![getFood](https://user-images.githubusercontent.com/74705281/190926549-def0057b-4e7d-4ad4-932f-8164f8034afd.gif)
+![startScreen](https://user-images.githubusercontent.com/74705281/190926551-1a9a5679-8c11-46f4-a805-2fe352b5eb5e.gif)
+![bounce](https://user-images.githubusercontent.com/74705281/190926557-99f24aa2-f65c-4eb8-aad8-e9e8f900fa5a.gif)
+![pauseMenu](https://user-images.githubusercontent.com/74705281/190926559-a6d548c1-5d0b-41ba-a1db-27cc52663798.gif)
