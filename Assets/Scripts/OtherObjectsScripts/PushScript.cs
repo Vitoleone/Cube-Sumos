@@ -39,15 +39,19 @@ public class PushScript : MonoBehaviour
         
         yield return new WaitForSeconds(0.5f);
         
-       if(collision.CompareTag("Player"))
-       {
-            collision.GetComponent<PlayerMovement>().instance.isPushed = false;
-            
-       }
-       else if(collision.CompareTag("Enemy"))
-       {
+        if(collision != null)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                collision.GetComponent<PlayerMovement>().instance.isPushed = false;
+
+            }
+            else if (collision.CompareTag("Enemy"))
+            {
                 collision.GetComponent<EnemyMovement>().instance.isPushed = false;
-       }
+            }
+        }
+       
         
         
     }
